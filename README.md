@@ -8,15 +8,15 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/WanderTillmann/Empresa-de-Revenda/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/WanderTillmann/Empresa-de-Revenda//pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/WanderTillmann/The-Documentation-Compendium.svg)](https://github.com/WanderTillmann/Empresa-de-Revenda/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/WanderTillmann/The-Documentation-Compendium.svg)](https://github.com/WanderTillmann/Empresa-de-Revenda//pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
 ---
 
-<p align="center"> Projeto de um sistema de revenda feito a partir do curso direto ao ponto de laravel na plataforma TreinaWeb.
+<p align="center">Projeto de um sistema de revenda feito a partir do curso direto ao ponto de laravel na plataforma TreinaWeb.
 
 --
 
