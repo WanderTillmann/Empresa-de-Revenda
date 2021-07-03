@@ -17,11 +17,9 @@
 ---
 
 <p align="center">Projeto de um sistema de revenda feito a partir do curso direto ao ponto de laravel na plataforma TreinaWeb.
-
---
-
-  System project carried out from a "straight to the point" class of laravel on the TreinaWeb platform
-    <br> 
+<br>
+System project carried out from a "straight to the point" class of laravel on the TreinaWeb platform
+<br> 
 </p>
 
 ## 📝 Table of Contents
