@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\EmpresaRequest;
 use App\Models\Empresa;
+use App\Models\Saldo;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -61,9 +62,12 @@ class EmpresaController extends Controller
      * @param Empresa $empresa
      * @return View
      */
-    public function show(Empresa $empresa): View
+    public function show(int $id): View
     {
-        return view('empresa.show', ['empresa' => $empresa]);
+        return view('empresa.show', [
+            'empresa' => Empresa::BuscaPorId($id),
+            'saldo' => Saldo::ultimoDaEmpresa($id)
+        ]);
     }
     /**
      * Show the form for editing the specified resource.

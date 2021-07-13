@@ -1,12 +1,15 @@
-//.cpf_cnpj{ }
-
 //  .celular{ }
 $('.celular').mask('(99) 9 9999-9999');
 //.phone{ }
 $('.telefone').mask('(99) 9 9999-9999');
 //.cep{ }
 $('.cep').mask('99999-999');
+//.data
+$('.data').mask('00/00/0000');
+//.dinheiro
+$('.money').mask('000.000.000.000.000,00', { reverse: true });
 
+//.cpf_cnpj{ }
 var field = ".cpf_cnpj";
 
 $(field).keydown(function () {

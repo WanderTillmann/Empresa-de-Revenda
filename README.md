@@ -18,8 +18,10 @@
 
 <p align="center">Projeto de um sistema de revenda feito a partir do curso direto ao ponto de laravel na plataforma TreinaWeb.
 <br>
+<br>
 System project carried out from a "straight to the point" class of laravel on the TreinaWeb platform
 <br> 
+---
 </p>
 
 ## 📝 Table of Contents
@@ -105,7 +107,7 @@ Add additional notes about how to deploy this on a live system.
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@WanderTillmann](https://github.com/WanderTillmann) - Idea & Initial work
 
 See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
 

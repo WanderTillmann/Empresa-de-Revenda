@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('title')
-    <h1>Novo %%modelName%%</h1>
+    <h1>Novo Movimento Financeiro</h1>
 @endsection
 @section('breadcrumb')
     <li class="breadcrumb-item">
-        <a href="{{ route('%%routeGroup%%%%viewName%%.index') }}">Listagem de %%modelName%% </a>
+        <a href="{{ route('movimentofinanceiro.index') }}">Listagem Movimentos Financeiros </a>
     </li>
     <li class="breadcrumb-item">
-        <a href="{{ route('%%routeGroup%%%%viewName%%.create') }}">Novo %%modelName%%</a>
+        <a href="{{ route('movimentofinanceiro.create') }}">Novo Movimento Financeiro</a>
     </li>
 @endsection
 
@@ -17,9 +17,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Criar %%modelName%%</div>
+                    <div class="card-header">Criar Movimentos Financeiro</div>
                     <div class="card-body">
-                        <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
+                        <a href="{{ url('/movimentofinanceiro') }}" title="Back"><button class="btn btn-warning btn-sm"><i
+                                    class="fa fa-arrow-left" aria-hidden="true"></i>
+                                Voltar</button></a>
                         <br />
                         <br />
 
@@ -31,10 +33,11 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/%%routeGroup%%%%viewName%%') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/movimentofinanceiro') }}" accept-charset="UTF-8"
+                            class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('%%viewTemplateDir%%.form', ['formMode' => 'create'])
+                            @include ('movimentoFinanceiro.form', ['formMode' => 'create'])
 
                         </form>
 

@@ -56,3 +56,29 @@ if (!function_exists('estados')) {
         ];
     }
 }
+
+if (!function_exists('data_iso')) {
+    function data_iso($data)
+    {
+        return \DateTime::createFromFormat('d/m/Y', $data)->format('Y-m-d');
+    }
+}
+
+if (!function_exists('date_br')) {
+    function data_br($data)
+    {
+        return (new DateTime($data))->format('d/m/Y');
+    }
+}
+if (!function_exists('numero_br')) {
+    function numero_br($valor)
+    {
+        return number_format($valor, '2', ',', '.');
+    }
+}
+if (!function_exists('numero_iso')) {
+    function numero_iso($data)
+    {
+        return str_replace(['.', ','], ['', '.'], $data);
+    }
+}

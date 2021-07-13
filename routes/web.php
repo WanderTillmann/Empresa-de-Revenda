@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MovimentosEstoqueController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +23,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('empresas', 'EmpresaController');
     Route::resource('produtos', 'ProdutosController');
     Route::resource('users', 'UsersController');
+    Route::resource('movimentofinanceiro', 'MovimentoFinanceiroController')->except('edit', 'update');
+    Route::resource('movimentosestoque', 'MovimentosEstoqueController')->only('destroy', 'store');
+
+    Route::post('empresas/buscar-por/nome', 'Selects\EmpresaNomeTipo');
+    Route::post('produtos/buscar-por/nome', 'Selects\ProdutoPorNome');
 });

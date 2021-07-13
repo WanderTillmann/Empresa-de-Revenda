@@ -36,6 +36,10 @@
                                 @endif
                                 <br>
                                 <strong>IE/RG</strong>: {{ $empresa->ie_rg }}<br>
+                                <strong>
+                                    Saldo à {{ $empresa->tipo === 'fornecedor' ? 'pagar' : 'receber' }}
+                                </strong>: R$ {{ numero_br($saldo->valor) }}
+                                <br>
                                 <strong>Observacoes</strong>: {{ $empresa->observacao }}<br>
 
                             </div>
@@ -56,6 +60,9 @@
 
                 </div>
             </div>
+        </div>
+        <div class="row">
+            @include('empresa.parciais.movimentos_estoque')
         </div>
         <div class="row align-self-end">
             <div class="col-12">

@@ -33,7 +33,7 @@
                          </p>
                      </a>
                  </li>
-                 <li class="nav-item menu-open">
+                 <li class="nav-item ">
                      <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-arrow-circle-down"></i>
                          <p>
@@ -56,7 +56,7 @@
                          </li>
                      </ul>
                  </li>
-                 <li class="nav-item menu-open">
+                 <li class="nav-item ">
                      <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-arrow-circle-up"></i>
                          <p>
@@ -79,7 +79,7 @@
                          </li>
                      </ul>
                  </li>
-                 <li class="nav-item menu-open">
+                 <li class="nav-item ">
                      <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-money-check-alt"></i>
                          <p>
@@ -89,20 +89,20 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="../../index.html" class="nav-link">
+                             <a href="{{ route('movimentofinanceiro.create') }}" class="nav-link">
                                  <i class="fas fa-dollar-sign nav-icon"></i>
                                  <p>Novo Lancamento</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="../../index2.html" class="nav-link">
+                             <a href="{{ route('movimentofinanceiro.index') }}" class="nav-link">
                                  <i class="fas fa-chart-pie nav-icon"></i>
                                  <p>Relartorio Financeiro</p>
                              </a>
                          </li>
                      </ul>
                  </li>
-                 <li class="nav-item menu-open">
+                 <li class="nav-item ">
                      <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-box"></i>
                          <p>
@@ -115,6 +115,12 @@
                              <a href="{{ route('produtos.index') }}" class="nav-link">
                                  <i class="fas fa-boxes nav-icon"></i>
                                  <p>Produtos</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="{{ route('users.index') }}" class="nav-link">
+                                 <i class="fas fa-users nav-icon"></i>
+                                 <p>Usuários</p>
                              </a>
                          </li>
                      </ul>

@@ -80,7 +80,7 @@ class EmpresaRequest extends FormRequest
     private function validarTipo()
     {
         if ($this->method() === 'post') {
-            return ['required', Rule::in(['clinete', 'fornecedor'])];
+            return ['required', Rule::in(['cliente', 'fornecedor'])];
         }
         return [];
     }
