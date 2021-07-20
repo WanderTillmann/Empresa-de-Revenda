@@ -54,9 +54,15 @@ class Empresa extends Model
      * @param integer $qtd
      * @return AbstractPaginator
      */
-    public static function todasPorTipo(String $tipo, int $qtd = 10): AbstractPaginator
+    public static function todasPorTipo(string $tipo, string $busca, int $qtd = 10): AbstractPaginator
     {
-        return self::where('tipo', $tipo)->paginate($qtd);
+        return self::where('tipo', $tipo)
+            ->where(function ($q) use ($busca) {
+                $q->orWhere('nome', 'LIKE', "%$busca%")
+                    ->orWhere('razao_social', 'LIKE', "%$busca%")
+                    ->orWhere('nome_contato', 'LIKE', "%$busca%");
+            })->withTrashed()
+            ->paginate($qtd);
     }
 
     /**
@@ -79,13 +85,21 @@ class Empresa extends Model
         return self::where('nome', 'LIKE', $nome)->where('tipo', $tipo)->get();
     }
 
+    /**
+     * Busca empresa com ID e suas relacoes
+     *
+     * @param integer $id
+     * @return void
+     */
     public static function BuscaPorId(int $id)
     {
         return self::with([
             'movimentosEstoque' => function ($query) {
                 $query->latest()->take(5);
             },
-            'movimentosEstoque.produto'
+            'movimentosEstoque.produto' => function ($q) {
+                $q->withTrashed();
+            }
         ])->findOrFail($id);
     }
 }

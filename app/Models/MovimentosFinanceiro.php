@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class MovimentosFinanceiro extends Model
 {
+    // use SoftDeletes;
     /**
      * The database table used by the model.
      *
@@ -59,7 +61,24 @@ class MovimentosFinanceiro extends Model
     public static function buscaPorIntervalo(string $inicio, string $fim, int $quantidade = 20)
     {
         return self::whereBetween('created_at', [$inicio, $fim])
-            ->with('empresa')
+            ->with(['empresa' => function ($q) {
+                $q->withTrashed();
+            }])
             ->paginate($quantidade);
+    }
+
+    /**
+     * Busca movimento por ID e tras empresa excluida
+     *
+     * @param integer $id
+     * @return void
+     */
+    public static function porIdComEmpresaExcluida(int $id)
+    {
+        return self::with([
+            'empresa'  => function ($q) {
+                $q->withTrashed();
+            },
+        ])->findOrFail($id);
     }
 }

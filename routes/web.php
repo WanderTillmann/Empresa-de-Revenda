@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MovimentosEstoqueController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('movimentosestoque', 'MovimentosEstoqueController')->only('destroy', 'store');
 
     Route::post('empresas/buscar-por/nome', 'Selects\EmpresaNomeTipo');
+    Route::get('empresas/relatorio/saldo/{empresa}', 'Relatorios\SaldoEmpresa')->name('empresas.relatorio.saldo');
+
     Route::post('produtos/buscar-por/nome', 'Selects\ProdutoPorNome');
 });

@@ -26,6 +26,16 @@ class MovimentosEstoque extends Model
      * @var array
      */
     protected $fillable = ['tipo', 'quantidade', 'valor',  'empresa_id', 'produto_id'];
+
+    /**
+     * indicar que o movimento de estoque sempre 
+     * deve carregar a relacao do produto
+     *
+     * @var array
+     */
+    protected $with = ['produto'];
+
+
     /**
      * Get the empresa that owns the MovimentosEstoque
      *
@@ -43,7 +53,7 @@ class MovimentosEstoque extends Model
      */
     public function produto(): BelongsTo
     {
-        return $this->belongsTo(Produto::class);
+        return $this->belongsTo(Produto::class)->withTrashed();
     }
 
     /**

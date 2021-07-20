@@ -24,9 +24,9 @@ class ProdutosController extends Controller
         if (!empty($keyword)) {
             $produtos = Produto::where('nome', 'LIKE', "%$keyword%")
                 ->orWhere('descricao', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
+                ->latest()->withTrashed()->paginate($perPage);
         } else {
-            $produtos = Produto::latest()->paginate($perPage);
+            $produtos = Produto::latest()->withTrashed()->paginate($perPage);
         }
 
         return view('produtos.index', compact('produtos'));
