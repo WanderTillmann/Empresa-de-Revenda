@@ -27,17 +27,6 @@ class MovimentosFinanceiroObserver
     }
 
     /**
-     * Handle the MovimentoFinanceiro "updated" event.
-     *
-     * @param  \App\Models\MovimentoFinanceiro  $movimentoFinanceiro
-     * @return void
-     */
-    public function updated(MovimentosFinanceiro $movimentoFinanceiro)
-    {
-        //
-    }
-
-    /**
      * Handle the MovimentoFinanceiro "deleted" event.
      *
      * @param  \App\Models\MovimentoFinanceiro  $movimentoFinanceiro
@@ -54,27 +43,5 @@ class MovimentosFinanceiroObserver
             ]);
 
         $saldo->delete();
-    }
-
-    /**
-     * Handle the MovimentosFinanceiro "restored" event.
-     *
-     * @param  \App\Models\MovimentosFinanceiro  $movimentoFinanceiro
-     * @return void
-     */
-    public function restored(MovimentosFinanceiro $movimentoFinanceiro)
-    {
-        //
-    }
-
-    /**
-     * Handle the MovimentosFinanceiro "force deleted" event.
-     *
-     * @param  \App\Models\MovimentosFinanceiro  $movimentoFinanceiro
-     * @return void
-     */
-    public function forceDeleted(MovimentosFinanceiro $movimentoFinanceiro)
-    {
-        //
     }
 }

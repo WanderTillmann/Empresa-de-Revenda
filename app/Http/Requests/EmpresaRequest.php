@@ -2,12 +2,20 @@
 
 namespace App\Http\Requests;
 
-
+use App\Rules\CepRule;
+use App\Services\CepServices;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 class EmpresaRequest extends FormRequest
 {
+    public $cepService;
+
+
+    public function __construct(CepServices $cepService)
+    {
+        $this->cepService = $cepService;
+    }
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -35,7 +43,7 @@ class EmpresaRequest extends FormRequest
             'celular' => ['required', 'size:11'],
             'email' => ['required', 'email'],
             'telefone' => ['size:11'],
-            'cep' => ['required', 'size:8'],
+            'cep' => ['required', 'size:8', new CepRule($this->cepService)],
             'logradouro' => ['required', 'max:255'],
             'bairro' => ['required', 'max:50'],
             'cidade' => ['required', 'max:50'],

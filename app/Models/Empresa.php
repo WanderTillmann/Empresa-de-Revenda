@@ -61,7 +61,7 @@ class Empresa extends Model
                 $q->orWhere('nome', 'LIKE', "%$busca%")
                     ->orWhere('razao_social', 'LIKE', "%$busca%")
                     ->orWhere('nome_contato', 'LIKE', "%$busca%");
-            })->withTrashed()
+            })
             ->paginate($qtd);
     }
 

@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Services\CepServices;
+
+Route::get('teste', function (CepServices $cepService) {
+    $cepService->consultar('77700000');
+});
 
 Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm']);
 
@@ -31,4 +36,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('empresas/relatorio/saldo/{empresa}', 'Relatorios\SaldoEmpresa')->name('empresas.relatorio.saldo');
 
     Route::post('produtos/buscar-por/nome', 'Selects\ProdutoPorNome');
+    Route::get('cep/{cep}', 'Selects\CepController');
 });

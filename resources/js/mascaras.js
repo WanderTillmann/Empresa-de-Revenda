@@ -9,6 +9,32 @@ $('.data').mask('00/00/0000');
 //.dinheiro
 $('.money').mask('000.000.000.000.000,00', { reverse: true });
 
+$('.cep').mask('99999-000');
+
+var cep = document.getElementById('cep');
+
+cep.addEventListener("keyup", function (e) {
+    if (cep.value.length == 9) {
+        autoComplete(cep.value);
+    }
+});
+
+function autoComplete(cep) {
+    let url = `http://empresarevenda.test/cep/${cep}`;
+    fetch(url).then(function (response) {
+        if (response.ok) {
+            response.json().then(function (endereco) {
+                document.getElementById('logradouro')
+                    .value = endereco.endereco;
+                document.getElementById('cidade')
+                    .value = endereco.cidade;
+                document.getElementById('estado')
+                    .value = endereco.uf;
+            });
+        }
+    });
+};
+
 //.cpf_cnpj{ }
 var field = ".cpf_cnpj";
 

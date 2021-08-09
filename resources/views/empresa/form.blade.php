@@ -84,7 +84,7 @@
     <label for="cep" class="col-form-label col-sm-2 ">Cep*</label>
     <div class="col-10">
         <input value="{{ old('cep', @$empresa->cep) }}" type="text" name="cep" id="cep" required maxlength="9"
-            class="cep form-control @error('cep') is-invalid @enderror">
+            class="cep form-control @error('cep') is-invalid @enderror" placeholder="00000-000">
         @error('cep')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror

@@ -15,7 +15,7 @@
     </div>
 </div>
 <div class="form-group row {{ $errors->has('tipo') ? 'has-error' : '' }}">
-    <label for="tipo" class="control-label col-form-label col-sm-2 ">{{ 'Tipo de lancamento' }}*</label>
+    <label for="tipo" class="col-form-label col-sm-2 ">{{ 'Tipo de lancamento' }}*</label>
     <div class="col-10">
         <select name="tipo" class="form-control" id="tipo" required>
             @foreach (json_decode('{ " entrada":"Entrada","saida":"Saida"}', true) as
@@ -29,7 +29,7 @@
     </div>
 </div>
 <div class="form-group row {{ $errors->has('empresa_id') ? 'has-error' : '' }}">
-    <label for="empresa_id" class="control-label col-form-label col-sm-2 ">{{ 'Empresa' }}*</label>
+    <label for="empresa_id" class="col-form-label col-sm-2 ">{{ 'Empresa' }}*</label>
     <div class="col-10">
         <select class="form-control" name="empresa_id" id="empresa-ajax" required>
             @if (isset($movimentos_financeiro))
